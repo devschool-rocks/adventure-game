@@ -1,11 +1,9 @@
 (function() {
 
-  var Db = require('./lib/db');
-  var data = new Db().init();
+  var db = require('./lib/db')();
 
-  players = data.players;
 
-  console.log(data.rooms[0]);
+  console.log(db.rooms[0]);
 
 
 }());
