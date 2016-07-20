@@ -1,0 +1,24 @@
+{
+  "name": "adventure",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/devschool-rocks/adventure-game.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/devschool-rocks/adventure-game/issues"
+  },
+  "homepage": "https://github.com/devschool-rocks/adventure-game#readme",
+  "dependencies": {
+    "fs": "0.0.2",
+    "glob-fs": "^0.1.6"
+  }
+}
