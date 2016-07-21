@@ -5,14 +5,20 @@
 
   var Weapon = require('./lib/types/weapon');
 
-  data.weapons.push(new Weapon({
-    name: 'small axe',
-    description: 'a small, bronze axe',
-    baseDamage: 12,
-    sidedDie: 12
-  }));
+  var alley = data.rooms[0];
+  var market = data.rooms[1];
+  alley.exits.push({"s": market.id})
+  market.exits.push({"n": alley.id})
 
-  db().save();
+  var player = data.players[0];
+  alley.enter(player);
+
+  console.log(player.look());
+
+  player.move('s', data.rooms);
+
+  console.log(player.look());
+  //db().save();
 
 
 }());
