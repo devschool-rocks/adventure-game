@@ -3,7 +3,14 @@
   var db = require('./lib/db');
   var data = db().load();
 
-  data.players[0].name = "Jim";
+  var Weapon = require('./lib/types/weapon');
+
+  data.weapons.push(new Weapon({
+    name: 'small axe',
+    description: 'a small, bronze axe',
+    baseDamage: 12,
+    sidedDie: 12
+  }));
 
   db().save();
 
