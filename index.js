@@ -7,10 +7,13 @@
 
   var alley  = data.rooms[0];
   var market = data.rooms[1];
+  var jim    = data.players[0];
 
-  alley.exits.push({'s': market.id});
-  market.exits.push({'n': alley.id});
+  market.enter(jim);
+  console.log(jim.look());
 
+  jim.move('sw', data.rooms);
+  console.log(jim.look());
 
   db().save();
 
