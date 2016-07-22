@@ -6,7 +6,7 @@
   var Player = require('./lib/types/player');
 
   var db = require('./lib/db');
-  var data = db().load();
+  var worldData = db().load();
 
   var minutes = function(num) {
     return num * 60000;
@@ -24,7 +24,7 @@
   var Connection = function(socket) {
     var self = this;
     this.socket = socket;
-    this.player = new Player({name: "Jimmy", room: data.rooms[0]});
+    this.player = new Player({name: "Jimmy", room: worldData.rooms[0]});
 
     this.send = function(data) {
       this.socket.write(data.toString());
@@ -44,7 +44,8 @@
         new Interpreter().eval(
           self.player,
           command,
-          args
+          args,
+          worldData
         )
       );
     });
