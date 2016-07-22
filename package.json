@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/devschool-rocks/adventure-game#readme",
   "dependencies": {
+    "circular-json": "^0.3.0",
     "fs": "0.0.2",
     "glob-fs": "^0.1.6"
   }
