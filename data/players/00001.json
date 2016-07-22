@@ -1,1 +1,1 @@
-{"id":"1","name":"Jim","room":{"id":"3","name":"a small shop","description":"This shop smells very strange and there is an old woman behind the counter.","players":["~"],"exits":[{"ne":"2"}]}}
+{"id":"1","name":"Jim","room":{"id":"3","name":"a small shop","description":"This shop smells very strange and there is an old woman behind the counter.","players":["\\\\\\\\\\\\\\\\\\x7e"],"exits":[{"ne":"2"}]}}
