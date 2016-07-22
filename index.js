@@ -1,7 +1,9 @@
 (function() {
   var util = require('util');
   var net = require('net')
-  var telnet = require('./vendor/telnet');
+
+  var Interpreter = require('./lib/interpreter');
+  var Player = require('./lib/types/player');
 
   var db = require('./lib/db');
   var data = db().load();
@@ -20,8 +22,9 @@
   };
 
   var Connection = function(socket) {
+    var self = this;
     this.socket = socket;
-    this.character = undefined;
+    this.player = new Player({name: "Jimmy", room: data.rooms[0]});
 
     this.send = function(data) {
       this.socket.write(data.toString());
@@ -35,8 +38,15 @@
 
       var command = cmdStr.split(' ')[0];
       var args = cmdStr.split(' ').slice(1);
-      util.log(command);
-      util.log(args);
+
+      self.send(
+        '\n' +
+        new Interpreter().eval(
+          self.player,
+          command,
+          args
+        )
+      );
     });
 
     this.socket.on('end', function() {
